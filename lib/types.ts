@@ -146,6 +146,8 @@ export interface GuestbookEntry {
   /** ISO-8601 timestamp. */
   timestamp: string;
   status?: "approved" | "pending";
+  /** Hearts from other guests (seed/mock value; the visitor's own like is added client-side). */
+  likes?: number;
 }
 
 export interface Couple {

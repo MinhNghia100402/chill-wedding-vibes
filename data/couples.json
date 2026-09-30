@@ -166,7 +166,8 @@
         "message": "Wishing you a lifetime of happiness! Save me a seat near the tiramisu.",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-09-01T10:00:00Z"
+        "timestamp": "2026-09-01T10:00:00Z",
+        "likes": 24
       },
       {
         "id": "msg_02",
@@ -174,7 +175,8 @@
         "message": "Can't wait to celebrate with you guys! So happy for you.",
         "mediaType": "text",
         "mediaUrl": null,
-        "timestamp": "2026-09-02T14:30:00Z"
+        "timestamp": "2026-09-02T14:30:00Z",
+        "likes": 12
       },
       {
         "id": "msg_03",
@@ -182,7 +184,8 @@
         "message": "From the café that started it all — we still keep your table free. Auguri!",
         "mediaType": "video",
         "mediaUrl": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-        "timestamp": "2026-09-08T18:15:00Z"
+        "timestamp": "2026-09-08T18:15:00Z",
+        "likes": 31
       },
       {
         "id": "msg_04",
@@ -190,7 +193,8 @@
         "message": "Seven years of dinner parties and you finally made it official. Cheers to you both!",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-09-15T20:45:00Z"
+        "timestamp": "2026-09-15T20:45:00Z",
+        "likes": 18
       },
       {
         "id": "msg_05",
@@ -198,7 +202,8 @@
         "message": "I knew from the first Christmas. Love you both endlessly.",
         "mediaType": "text",
         "mediaUrl": null,
-        "timestamp": "2026-09-21T09:10:00Z"
+        "timestamp": "2026-09-21T09:10:00Z",
+        "likes": 42
       }
     ],
     "music": {
@@ -380,7 +385,8 @@
         "message": "Finally, a race you both win. Fair winds and following seas!",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-08-20T16:00:00Z"
+        "timestamp": "2026-08-20T16:00:00Z",
+        "likes": 16
       },
       {
         "id": "msg_12",
@@ -388,7 +394,8 @@
         "message": "My big sister is getting married!!! Already practicing my toast.",
         "mediaType": "text",
         "mediaUrl": null,
-        "timestamp": "2026-09-05T11:20:00Z"
+        "timestamp": "2026-09-05T11:20:00Z",
+        "likes": 27
       },
       {
         "id": "msg_13",
@@ -396,7 +403,8 @@
         "message": "Second Place, first in our hearts.",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-09-18T13:05:00Z"
+        "timestamp": "2026-09-18T13:05:00Z",
+        "likes": 9
       }
     ],
     "music": {
@@ -405,11 +413,11 @@
       "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
     }
   },
-  "minh-and-linh": {
+  "nghia-and-linh": {
     "id": "cpl_003",
-    "slug": "minh-and-linh",
+    "slug": "nghia-and-linh",
     "seo": {
-      "title": "Minh & Linh — Just Married",
+      "title": "Nghĩa & Linh — Just Married",
       "description": "Thank you for celebrating with us in Hà Nội on September 12, 2026."
     },
     "theme": {
@@ -419,7 +427,7 @@
       "bodyFont": "Be Vietnam Pro"
     },
     "hero": {
-      "names": "Minh & Linh",
+      "names": "Nghĩa & Linh",
       "date": "2026-09-12T03:00:00Z",
       "timeZone": "Asia/Ho_Chi_Minh",
       "location": "Hà Nội, Việt Nam",
@@ -433,13 +441,13 @@
         {
           "date": "Nov 2019",
           "title": "The Last Copy",
-          "description": "Linh let Minh have the book — on the condition he returned it over coffee.",
+          "description": "Linh let Nghĩa have the book — on the condition he returned it over coffee.",
           "image": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"
         },
         {
           "date": "Feb 2022",
           "title": "Tết Together",
-          "description": "Minh's first Tết with Linh's family. He survived three rounds of bánh chưng and one very serious grandmother.",
+          "description": "Nghĩa's first Tết with Linh's family. He survived three rounds of bánh chưng and one very serious grandmother.",
           "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80"
         },
         {
@@ -511,16 +519,16 @@
         {
           "label": "Chú rể — Groom",
           "bankName": "Vietcombank",
-          "accountName": "NGUYEN VAN MINH",
+          "accountName": "VU MINH NGHIA",
           "accountNumber": "0000000000",
-          "qrPayload": "00020101021138540010A00000072701240006970436011000000000000208QRIBFTTA53037045802VN62230819Mung cuoi Minh Linh6304AB32"
+          "qrPayload": "00020101021138540010A00000072701240006970436011000000000000208QRIBFTTA53037045802VN62230819Mung cuoi nghia Linh6304AB32"
         },
         {
           "label": "Cô dâu — Bride",
           "bankName": "VietinBank",
           "accountName": "TRAN THI LINH",
           "accountNumber": "0000000001",
-          "qrPayload": "00020101021138540010A00000072701240006970415011000000000010208QRIBFTTA53037045802VN62230819Mung cuoi Minh Linh6304F9A0"
+          "qrPayload": "00020101021138540010A00000072701240006970415011000000000010208QRIBFTTA53037045802VN62230819Mung cuoi nghia Linh6304F9A0"
         }
       ]
     },
@@ -543,7 +551,8 @@
         "message": "Chúc hai cháu trăm năm hạnh phúc, sớm có tin vui!",
         "mediaType": "text",
         "mediaUrl": null,
-        "timestamp": "2026-09-12T12:30:00Z"
+        "timestamp": "2026-09-12T12:30:00Z",
+        "likes": 35
       },
       {
         "id": "msg_22",
@@ -551,7 +560,8 @@
         "message": "The most beautiful banquet — and the best karaoke night ever. Congratulations!",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-09-13T02:00:00Z"
+        "timestamp": "2026-09-13T02:00:00Z",
+        "likes": 21
       },
       {
         "id": "msg_23",
@@ -559,7 +569,8 @@
         "message": "Chúc mừng hạnh phúc! Nhớ giữ cuốn sách đó nhé 📚",
         "mediaType": "image",
         "mediaUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
-        "timestamp": "2026-09-14T08:45:00Z"
+        "timestamp": "2026-09-14T08:45:00Z",
+        "likes": 14
       },
       {
         "id": "msg_24",
