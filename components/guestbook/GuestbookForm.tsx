@@ -1,19 +1,22 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { CircleAlert, CircleCheck, Film, ImagePlus, LoaderCircle, Send, Trash2, UploadCloud, X } from "lucide-react";
+import { Check, CircleAlert, CircleCheck, Film, ImagePlus, LoaderCircle, Send, UploadCloud, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useId, useRef, useState, type DragEvent, type FormEvent } from "react";
 import { useGuestbook } from "@/components/guestbook/GuestbookProvider";
 import { buttonClasses } from "@/components/ui/button-styles";
-import { acceptAttribute, formatBytes, mediaTypeOf, uploadMedia, validateFile } from "@/lib/guestbook-upload";
+import { acceptAttribute, formatBytes, mediaTypeOf, mockDelay, uploadMedia, validateFile } from "@/lib/guestbook-upload";
 import { cn } from "@/lib/utils";
 
 const MAX_MESSAGE = 500;
+/** How long the submit button celebrates before returning to its default state. */
+const CELEBRATE_MS = 2500;
 
 type Phase =
   | { kind: "idle" }
-  | { kind: "uploading"; progress: number }
+  /** `progress` is null for text-only wishes (no file to upload). */
+  | { kind: "sending"; progress: number | null }
   | { kind: "success"; pending: boolean }
   | { kind: "error"; message: string };
 
@@ -23,8 +26,9 @@ interface Selected {
   type: "image" | "video";
 }
 
+// Semi-transparent fields so the glass card's blur shows through.
 const inputClasses =
-  "w-full rounded-xl border border-on-surface/15 bg-surface px-4 py-3 text-on-surface placeholder:text-on-surface/40 transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 aria-[invalid=true]:border-red-500";
+  "w-full rounded-xl border border-on-surface/10 bg-surface/60 px-4 py-3 text-on-surface placeholder:text-on-surface/40 backdrop-blur-sm transition focus:border-primary focus:bg-surface/80 focus:outline-none focus:ring-2 focus:ring-primary/30 aria-[invalid=true]:border-red-500";
 
 export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
   const { config, addEntry } = useGuestbook();
@@ -35,11 +39,12 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
   const [dragging, setDragging] = useState(false);
   const [errors, setErrors] = useState<{ name?: string; message?: string; file?: string }>({});
   const [phase, setPhase] = useState<Phase>({ kind: "idle" });
+  const [celebrating, setCelebrating] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const allowsMedia = config.allowPhotos || config.allowVideos;
-  const uploading = phase.kind === "uploading";
+  const uploading = phase.kind === "sending";
   const mediaLabel = [config.allowPhotos && "photo", config.allowVideos && "video"].filter(Boolean).join(" or ");
 
   // Release the preview blob whenever the selection changes or the form unmounts.
@@ -47,6 +52,11 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
     if (selected) URL.revokeObjectURL(selected.previewUrl);
   }, [selected]);
   useEffect(() => () => abortRef.current?.abort(), []);
+  useEffect(() => {
+    if (!celebrating) return;
+    const id = window.setTimeout(() => setCelebrating(false), CELEBRATE_MS);
+    return () => window.clearTimeout(id);
+  }, [celebrating]);
 
   function selectFile(file: File | undefined) {
     if (!file) return;
@@ -79,23 +89,28 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length) return;
 
+    // Mock API call (~1.5 s). With a file, simulate its upload with progress;
+    // text-only wishes still "send" so every submission feels the same.
     let mediaUrl: string | null = null;
-    if (selected) {
-      const controller = new AbortController();
-      abortRef.current = controller;
-      setPhase({ kind: "uploading", progress: 0 });
-      try {
+    const controller = new AbortController();
+    abortRef.current = controller;
+    setCelebrating(false);
+    setPhase({ kind: "sending", progress: selected ? 0 : null });
+    try {
+      if (selected) {
         ({ url: mediaUrl } = await uploadMedia(selected.file, {
           signal: controller.signal,
-          onProgress: (progress) => setPhase({ kind: "uploading", progress }),
+          onProgress: (progress) => setPhase({ kind: "sending", progress }),
         }));
-      } catch (error) {
-        const cancelled = error instanceof DOMException && error.name === "AbortError";
-        setPhase(cancelled ? { kind: "idle" } : { kind: "error", message: "Upload failed — please try again." });
-        return;
-      } finally {
-        abortRef.current = null;
+      } else {
+        await mockDelay(1500, controller.signal);
       }
+    } catch (error) {
+      const cancelled = error instanceof DOMException && error.name === "AbortError";
+      setPhase(cancelled ? { kind: "idle" } : { kind: "error", message: "Sending failed — please try again." });
+      return;
+    } finally {
+      abortRef.current = null;
     }
 
     const entry = addEntry({
@@ -108,6 +123,7 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
     setMessage("");
     clearFile();
     setPhase({ kind: "success", pending: entry.status === "pending" });
+    setCelebrating(true);
     onPosted?.();
   }
 
@@ -115,7 +131,9 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
     <form
       noValidate
       onSubmit={handleSubmit}
-      className="rounded-3xl bg-surface p-6 text-on-surface shadow-xl shadow-on-canvas/5 ring-1 ring-primary/10 sm:p-8"
+      // Glassmorphism card (theme-aware: surface tint instead of hard-coded white, so dark
+      // presets get dark glass with readable text).
+      className="relative rounded-3xl border border-white/40 bg-surface/40 p-6 text-on-surface shadow-[0_20px_60px_-25px_rgb(var(--color-primary-rgb)/0.45)] backdrop-blur-md sm:p-8"
     >
       <div className="space-y-5">
         <div>
@@ -176,7 +194,20 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
             </p>
 
             {selected ? (
-              <div className="relative overflow-hidden rounded-2xl ring-1 ring-on-surface/10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="relative overflow-hidden rounded-2xl ring-1 ring-on-surface/10"
+              >
+                <button
+                  type="button"
+                  onClick={clearFile}
+                  disabled={uploading}
+                  aria-label="Remove file"
+                  className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur transition hover:bg-primary hover:text-on-primary disabled:opacity-40"
+                >
+                  <X className="h-4 w-4" />
+                </button>
                 {selected.type === "image" ? (
                   <Image
                     src={selected.previewUrl}
@@ -189,7 +220,7 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
                 ) : (
                   <video src={selected.previewUrl} controls playsInline muted className="max-h-72 w-full bg-black" />
                 )}
-                <div className="flex items-center gap-3 bg-surface px-4 py-3 text-sm">
+                <div className="flex items-center gap-3 bg-surface/70 px-4 py-3 text-sm backdrop-blur-sm">
                   {selected.type === "image" ? (
                     <ImagePlus className="h-4 w-4 shrink-0 text-accent" aria-hidden />
                   ) : (
@@ -197,17 +228,8 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
                   )}
                   <span className="min-w-0 flex-1 truncate">{selected.file.name}</span>
                   <span className="shrink-0 opacity-60">{formatBytes(selected.file.size)}</span>
-                  <button
-                    type="button"
-                    onClick={clearFile}
-                    disabled={uploading}
-                    aria-label="Remove file"
-                    className="rounded-lg p-1.5 text-red-600 transition hover:bg-red-50 disabled:opacity-40"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
                 </div>
-              </div>
+              </motion.div>
             ) : (
               <label
                 onDragEnter={(e) => {
@@ -223,7 +245,9 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
                 className={cn(
                   "flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-10 text-center transition-all duration-300",
                   "focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30",
-                  dragging ? "scale-[1.02] border-primary bg-primary/10" : "border-on-surface/20 hover:border-primary/60 hover:bg-primary/5",
+                  dragging
+                    ? "scale-[1.02] border-primary bg-primary/10"
+                    : "border-on-surface/20 bg-surface/30 hover:border-primary/60 hover:bg-primary/5",
                   errors.file && "border-red-400",
                 )}
               >
@@ -255,7 +279,7 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
         )}
 
         <AnimatePresence>
-          {uploading && (
+          {phase.kind === "sending" && phase.progress !== null && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -301,16 +325,44 @@ export function GuestbookForm({ onPosted }: { onPosted?: () => void }) {
         )}
 
         <div className="flex gap-3">
-          <button type="submit" disabled={uploading} className={buttonClasses("solid", "flex-1 py-3.5 text-base")}>
-            {uploading ? (
-              <>
-                <LoaderCircle className="h-5 w-5 animate-spin" aria-hidden /> Posting…
-              </>
-            ) : (
-              <>
-                <Send className="h-4 w-4" aria-hidden /> Post my wish
-              </>
-            )}
+          <button
+            type="submit"
+            disabled={uploading}
+            aria-live="polite"
+            className={buttonClasses("solid", "relative flex-1 overflow-hidden py-3.5 text-base disabled:opacity-90")}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={uploading ? "sending" : celebrating ? "sent" : "idle"}
+                initial={{ y: 14, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -14, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="inline-flex items-center gap-2"
+              >
+                {uploading ? (
+                  <>
+                    <LoaderCircle className="h-5 w-5 animate-spin" aria-hidden /> Sending vibes…
+                  </>
+                ) : celebrating ? (
+                  <>
+                    <motion.span
+                      initial={{ scale: 0, rotate: -45 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                      className="flex"
+                    >
+                      <Check className="h-5 w-5" aria-hidden />
+                    </motion.span>
+                    Sent with love!
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" aria-hidden /> Post my wish
+                  </>
+                )}
+              </motion.span>
+            </AnimatePresence>
           </button>
           {uploading && (
             <button type="button" onClick={() => abortRef.current?.abort()} className={buttonClasses("outline", "py-3.5")}>

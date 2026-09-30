@@ -48,9 +48,24 @@ interface UploadOptions {
   signal?: AbortSignal;
 }
 
-/** Mock upload: ~1–3 s of simulated progress (bigger files take longer). */
+/** Resolves after `ms` (mock network latency); rejects with AbortError if cancelled. */
+export function mockDelay(ms: number, signal?: AbortSignal): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const id = window.setTimeout(resolve, ms);
+    signal?.addEventListener(
+      "abort",
+      () => {
+        window.clearTimeout(id);
+        reject(new DOMException("Cancelled", "AbortError"));
+      },
+      { once: true },
+    );
+  });
+}
+
+/** Mock upload: ~1.5 s of simulated progress (a little longer for big files, max 2.5 s). */
 export function uploadMedia(file: File, { onProgress, signal }: UploadOptions): Promise<{ url: string }> {
-  const duration = Math.min(3000, 1000 + file.size / 20_000);
+  const duration = Math.min(2500, 1500 + file.size / 200_000);
   const started = performance.now();
 
   return new Promise((resolve, reject) => {
