@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Neutral defaults so pages outside a couple's ThemeProvider (landing, 404)
+ * still resolve every themed token. ThemeProvider overrides these inline.
+ */
+:root {
+  --color-primary-rgb: 120 90 60;
+  --color-on-primary-rgb: 255 255 255;
+  --color-secondary-rgb: 250 247 242;
+  --color-on-secondary-rgb: 28 25 23;
+  --color-canvas-alt-rgb: 243 238 230;
+  --color-surface-rgb: 255 255 255;
+  --color-on-surface-rgb: 28 25 23;
+  --color-accent-rgb: 120 90 60;
+  --font-heading: var(--font-playfair-display), Georgia, serif;
+  --font-body: var(--font-lato), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: rgb(var(--color-secondary-rgb));
+}
+
+::selection {
+  background-color: rgb(var(--color-primary-rgb) / 0.25);
+}

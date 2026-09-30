@@ -1,0 +1,580 @@
+{
+  "david-and-emma": {
+    "id": "cpl_001",
+    "slug": "david-and-emma",
+    "seo": {
+      "title": "David & Emma's Wedding",
+      "description": "Join us under the Tuscan sun to celebrate our special day — December 12, 2026."
+    },
+    "theme": {
+      "primaryColor": "#B8912F",
+      "secondaryColor": "#F7F3E8",
+      "headingFont": "Playfair Display",
+      "bodyFont": "Lato"
+    },
+    "hero": {
+      "names": "David & Emma",
+      "date": "2026-12-12T14:00:00Z",
+      "timeZone": "Europe/Rome",
+      "location": "Tuscany, Italy",
+      "backgroundImage": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80",
+      "tagline": "We are tying the knot!"
+    },
+    "story": {
+      "title": "How We Met",
+      "content": "It started with a spilled cappuccino in a tiny café near the Pantheon. Emma was sketching the dome; David was late for a meeting he never made it to. Seven years, three countries and one very patient dog later, we're heading back to Italy to say \"I do\".",
+      "timeline": [
+        {
+          "date": "Jan 2018",
+          "title": "First Meeting",
+          "description": "A crowded café in Rome, one empty chair, and a cappuccino that ended up on Emma's sketchbook.",
+          "image": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Aug 2020",
+          "title": "Moving to London",
+          "description": "We traded espresso for tea and a shoebox flat in Islington that we still miss.",
+          "image": "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "May 2025",
+          "title": "The Proposal",
+          "description": "Back at the same café, same table. This time David didn't spill anything — he knelt.",
+          "image": "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80"
+        }
+      ]
+    },
+    "events": [
+      {
+        "name": "Welcome Dinner",
+        "startsAt": "2026-12-11T18:00:00Z",
+        "endsAt": "2026-12-11T22:00:00Z",
+        "time": "Friday, Dec 11 · 7:00 PM",
+        "locationName": "Villa Rosa",
+        "address": "Via di Montefioralle 12, 50022 Greve in Chianti, Italy",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Greve+in+Chianti+Italy",
+        "dressCode": "Smart casual",
+        "description": "Pasta, Chianti and a chance to meet everyone before the big day."
+      },
+      {
+        "name": "Ceremony",
+        "startsAt": "2026-12-12T14:00:00Z",
+        "endsAt": "2026-12-12T15:00:00Z",
+        "time": "Saturday, Dec 12 · 3:00 PM",
+        "locationName": "Castello di Vicchiomaggio",
+        "address": "Via Vicchiomaggio 4, 50022 Greve in Chianti, Italy",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Castello+di+Vicchiomaggio",
+        "dressCode": "Black tie optional",
+        "description": "An outdoor ceremony in the castle gardens. Heels may sink — consider block heels!"
+      },
+      {
+        "name": "Reception",
+        "startsAt": "2026-12-12T16:00:00Z",
+        "endsAt": "2026-12-12T23:00:00Z",
+        "time": "Saturday, Dec 12 · 5:00 PM",
+        "locationName": "The Great Hall",
+        "address": "Castello di Vicchiomaggio, Greve in Chianti, Italy",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Castello+di+Vicchiomaggio",
+        "dressCode": "Black tie optional",
+        "description": "Dinner, toasts and dancing until the candles burn down."
+      }
+    ],
+    "travel": {
+      "intro": "The nearest airport is Florence (FLR), about 40 minutes by car. We've reserved room blocks at these hotels.",
+      "hotels": [
+        {
+          "name": "Grand Hotel Chianti",
+          "distance": "5 mins from the venue",
+          "bookingLink": "https://www.booking.com/searchresults.html?ss=Greve+in+Chianti",
+          "note": "Use code DAVIDEMMA for 15% off"
+        },
+        {
+          "name": "Agriturismo Il Poggio",
+          "distance": "12 mins from the venue",
+          "bookingLink": "https://www.booking.com/searchresults.html?ss=Greve+in+Chianti"
+        }
+      ]
+    },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Couple holding hands"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Wedding table setting"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Bride and groom portrait"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Couple walking together"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Wedding rings"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Bouquet of flowers"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Couple embracing"
+      }
+    ],
+    "registry": {
+      "message": "Your presence is the greatest gift. If you wish to bless us, consider contributing to our honeymoon along the Amalfi Coast.",
+      "links": [
+        {
+          "store": "Honeyfund",
+          "url": "https://www.honeyfund.com"
+        },
+        {
+          "store": "Zola Registry",
+          "url": "https://www.zola.com"
+        }
+      ],
+      "accounts": [
+        {
+          "label": "David & Emma",
+          "bankName": "Demo Bank (SEPA)",
+          "accountName": "David and Emma Rossi",
+          "accountNumber": "IT60 X054 2811 1010 0000 0123 456",
+          "qrPayload": "BCD\n002\n1\nSCT\n\nDavid and Emma Rossi\nIT60X0542811101000000123456\n\n\n\nWedding gift"
+        }
+      ]
+    },
+    "rsvpConfig": {
+      "deadline": "2026-11-01",
+      "maxGuests": 2,
+      "askDietary": true,
+      "askSong": true
+    },
+    "guestbookConfig": {
+      "allowPhotos": true,
+      "allowVideos": true,
+      "requireApproval": false,
+      "maxFileSizeMB": 25
+    },
+    "guestbookEntries": [
+      {
+        "id": "msg_01",
+        "authorName": "Uncle Bob",
+        "message": "Wishing you a lifetime of happiness! Save me a seat near the tiramisu.",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-09-01T10:00:00Z"
+      },
+      {
+        "id": "msg_02",
+        "authorName": "Sarah & John",
+        "message": "Can't wait to celebrate with you guys! So happy for you.",
+        "mediaType": "text",
+        "mediaUrl": null,
+        "timestamp": "2026-09-02T14:30:00Z"
+      },
+      {
+        "id": "msg_03",
+        "authorName": "Giulia Romano",
+        "message": "From the café that started it all — we still keep your table free. Auguri!",
+        "mediaType": "video",
+        "mediaUrl": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+        "timestamp": "2026-09-08T18:15:00Z"
+      },
+      {
+        "id": "msg_04",
+        "authorName": "The London Crew",
+        "message": "Seven years of dinner parties and you finally made it official. Cheers to you both!",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-09-15T20:45:00Z"
+      },
+      {
+        "id": "msg_05",
+        "authorName": "Grandma Rose",
+        "message": "I knew from the first Christmas. Love you both endlessly.",
+        "mediaType": "text",
+        "mediaUrl": null,
+        "timestamp": "2026-09-21T09:10:00Z"
+      }
+    ],
+    "music": {
+      "title": "Our First Dance",
+      "artist": "SoundHelix",
+      "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    }
+  },
+  "john-and-jane": {
+    "id": "cpl_002",
+    "slug": "john-and-jane",
+    "seo": {
+      "title": "John & Jane · June 19, 2027",
+      "description": "A seaside wedding on the coast of Maine. We can't wait to celebrate with you."
+    },
+    "theme": {
+      "primaryColor": "#1F2E4D",
+      "secondaryColor": "#EEF0F3",
+      "headingFont": "Cormorant Garamond",
+      "bodyFont": "Montserrat"
+    },
+    "hero": {
+      "names": "John & Jane",
+      "date": "2027-06-19T20:30:00Z",
+      "timeZone": "America/New_York",
+      "location": "Kennebunkport, Maine",
+      "backgroundImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80",
+      "tagline": "Salt air, sea breeze & forever."
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Two sailors who kept losing the same regatta to each other. After the third summer of second places, we decided to join the same crew — and haven't lost since.",
+      "timeline": [
+        {
+          "date": "Jul 2016",
+          "title": "Rivals on the Water",
+          "description": "Jane crossed the finish line four seconds ahead. John demanded a rematch over lobster rolls.",
+          "image": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Sep 2019",
+          "title": "Same Boat",
+          "description": "We bought a weathered 1970s sloop together and named her \"Second Place\".",
+          "image": "https://images.unsplash.com/photo-1470338745628-171cf53de3a8?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Mar 2023",
+          "title": "Our First Home",
+          "description": "A tiny cottage with a big porch, three minutes from the harbor.",
+          "image": "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Oct 2025",
+          "title": "She Said Yes",
+          "description": "Mid-sail, at sunset, with a ring tied to the jib sheet. Nerve-wracking, but worth it.",
+          "image": "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80"
+        }
+      ]
+    },
+    "events": [
+      {
+        "name": "Ceremony",
+        "startsAt": "2027-06-19T20:30:00Z",
+        "endsAt": "2027-06-19T21:15:00Z",
+        "time": "Saturday, Jun 19 · 4:30 PM",
+        "locationName": "Colony Beach Lawn",
+        "address": "140 Ocean Ave, Kennebunkport, ME 04046",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kennebunkport+ME",
+        "dressCode": "Coastal formal",
+        "description": "Oceanfront vows on the lawn. It gets breezy — bring a layer."
+      },
+      {
+        "name": "Clambake Reception",
+        "startsAt": "2027-06-19T22:00:00Z",
+        "endsAt": "2027-06-20T03:00:00Z",
+        "time": "Saturday, Jun 19 · 6:00 PM",
+        "locationName": "The Boathouse",
+        "address": "21 Ocean Ave, Kennebunkport, ME 04046",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Kennebunkport+Boathouse",
+        "dressCode": "Coastal formal",
+        "description": "Lobster, corn, and a live bluegrass band."
+      },
+      {
+        "name": "Farewell Brunch",
+        "startsAt": "2027-06-20T14:00:00Z",
+        "endsAt": "2027-06-20T16:00:00Z",
+        "time": "Sunday, Jun 20 · 10:00 AM",
+        "locationName": "Harbor Café",
+        "address": "5 Dock Square, Kennebunkport, ME 04046",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dock+Square+Kennebunkport",
+        "dressCode": "Casual"
+      }
+    ],
+    "travel": {
+      "intro": "Portland International Jetport (PWM) is a 35-minute drive. June books up fast — reserve early!",
+      "hotels": [
+        {
+          "name": "The Colony Hotel",
+          "distance": "On site",
+          "bookingLink": "https://www.booking.com/searchresults.html?ss=Kennebunkport",
+          "note": "Room block under \"Carter–Hughes Wedding\""
+        },
+        {
+          "name": "Harbor Inn",
+          "distance": "4 mins away",
+          "bookingLink": "https://www.booking.com/searchresults.html?ss=Kennebunkport"
+        },
+        {
+          "name": "Seaside Cottages",
+          "distance": "10 mins away",
+          "bookingLink": "https://www.booking.com/searchresults.html?ss=Kennebunkport"
+        }
+      ]
+    },
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Couple on the shore"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Wedding portrait"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Ocean at dusk"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Couple under an arch"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Reception details"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Beach and waves"
+      }
+    ],
+    "registry": {
+      "message": "Having you there is more than enough. For those who've asked, we're saving for a new mainsail and a honeymoon in Nova Scotia.",
+      "links": [
+        {
+          "store": "Crate & Barrel",
+          "url": "https://www.crateandbarrel.com/gift-registry"
+        },
+        {
+          "store": "Honeyfund",
+          "url": "https://www.honeyfund.com"
+        }
+      ],
+      "accounts": [
+        {
+          "label": "Honeymoon Fund",
+          "bankName": "Online transfer",
+          "accountName": "John Carter & Jane Hughes",
+          "accountNumber": "@johnandjane-2027",
+          "qrPayload": "https://example.com/pay/john-and-jane"
+        }
+      ]
+    },
+    "rsvpConfig": {
+      "deadline": "2027-05-01",
+      "maxGuests": 4,
+      "askDietary": true,
+      "askSong": false
+    },
+    "guestbookConfig": {
+      "allowPhotos": true,
+      "allowVideos": true,
+      "requireApproval": false,
+      "maxFileSizeMB": 50
+    },
+    "guestbookEntries": [
+      {
+        "id": "msg_11",
+        "authorName": "Harbor Yacht Club",
+        "message": "Finally, a race you both win. Fair winds and following seas!",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-08-20T16:00:00Z"
+      },
+      {
+        "id": "msg_12",
+        "authorName": "Mia Hughes",
+        "message": "My big sister is getting married!!! Already practicing my toast.",
+        "mediaType": "text",
+        "mediaUrl": null,
+        "timestamp": "2026-09-05T11:20:00Z"
+      },
+      {
+        "id": "msg_13",
+        "authorName": "Coach Dan",
+        "message": "Second Place, first in our hearts.",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-09-18T13:05:00Z"
+      }
+    ],
+    "music": {
+      "title": "Harbor Lights",
+      "artist": "SoundHelix",
+      "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+    }
+  },
+  "minh-and-linh": {
+    "id": "cpl_003",
+    "slug": "minh-and-linh",
+    "seo": {
+      "title": "Minh & Linh — Just Married",
+      "description": "Thank you for celebrating with us in Hà Nội on September 12, 2026."
+    },
+    "theme": {
+      "primaryColor": "#6B8F71",
+      "secondaryColor": "#FBF1EE",
+      "headingFont": "Great Vibes",
+      "bodyFont": "Be Vietnam Pro"
+    },
+    "hero": {
+      "names": "Minh & Linh",
+      "date": "2026-09-12T03:00:00Z",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "location": "Hà Nội, Việt Nam",
+      "backgroundImage": "https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?auto=format&fit=crop&w=2000&q=80",
+      "tagline": "Trăm năm hạnh phúc — a hundred years of happiness."
+    },
+    "story": {
+      "title": "Chuyện Tình Yêu",
+      "content": "We grew up on the same street in Hoàn Kiếm but didn't really meet until a rainy evening at a bookshop on Đinh Lễ, both reaching for the last copy of the same novel.",
+      "timeline": [
+        {
+          "date": "Nov 2019",
+          "title": "The Last Copy",
+          "description": "Linh let Minh have the book — on the condition he returned it over coffee.",
+          "image": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Feb 2022",
+          "title": "Tết Together",
+          "description": "Minh's first Tết with Linh's family. He survived three rounds of bánh chưng and one very serious grandmother.",
+          "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80"
+        },
+        {
+          "date": "Dec 2025",
+          "title": "Lễ Dạm Ngõ",
+          "description": "Our families met formally — and the wedding planning officially began.",
+          "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+        }
+      ]
+    },
+    "film": {
+      "title": "Hành Trình Của Chúng Mình",
+      "description": "From a rainy evening at the bookshop to our wedding day — our journey in a few minutes. (Demo link: replace with your own film.)",
+      "url": "https://www.youtube.com/watch?v=IOe0tNoUGv8"
+    },
+    "events": [
+      {
+        "name": "Lễ Vu Quy (Bride's Ceremony)",
+        "startsAt": "2026-09-12T01:00:00Z",
+        "endsAt": "2026-09-12T02:30:00Z",
+        "time": "Saturday, Sep 12 · 8:00 AM",
+        "locationName": "Nhà gái — Bride's family home",
+        "address": "18 Hàng Bài, Hoàn Kiếm, Hà Nội",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hang+Bai+Hoan+Kiem+Ha+Noi",
+        "dressCode": "Áo dài welcome"
+      },
+      {
+        "name": "Tiệc Cưới (Wedding Banquet)",
+        "startsAt": "2026-09-12T11:00:00Z",
+        "endsAt": "2026-09-12T14:00:00Z",
+        "time": "Saturday, Sep 12 · 6:00 PM",
+        "locationName": "Sen Tây Hồ",
+        "address": "614 Lạc Long Quân, Tây Hồ, Hà Nội",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=Lac+Long+Quan+Tay+Ho+Ha+Noi",
+        "dressCode": "Formal",
+        "description": "Dinner, family toasts and karaoke — you have been warned."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Lake at sunrise"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Golden hour field"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Hạ Long Bay"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Hội An lanterns"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Old quarter street"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Evening lights"
+      }
+    ],
+    "registry": {
+      "message": "Sự hiện diện của bạn là món quà quý giá nhất. If you'd like to send a wedding gift (mừng cưới), scan either QR code with your banking app.",
+      "links": [],
+      "accounts": [
+        {
+          "label": "Chú rể — Groom",
+          "bankName": "Vietcombank",
+          "accountName": "NGUYEN VAN MINH",
+          "accountNumber": "0000000000",
+          "qrPayload": "00020101021138540010A00000072701240006970436011000000000000208QRIBFTTA53037045802VN62230819Mung cuoi Minh Linh6304AB32"
+        },
+        {
+          "label": "Cô dâu — Bride",
+          "bankName": "VietinBank",
+          "accountName": "TRAN THI LINH",
+          "accountNumber": "0000000001",
+          "qrPayload": "00020101021138540010A00000072701240006970415011000000000010208QRIBFTTA53037045802VN62230819Mung cuoi Minh Linh6304F9A0"
+        }
+      ]
+    },
+    "rsvpConfig": {
+      "deadline": "2026-08-25",
+      "maxGuests": 3,
+      "askDietary": false,
+      "askSong": false
+    },
+    "guestbookConfig": {
+      "allowPhotos": true,
+      "allowVideos": false,
+      "requireApproval": true,
+      "maxFileSizeMB": 10
+    },
+    "guestbookEntries": [
+      {
+        "id": "msg_21",
+        "authorName": "Bác Hùng",
+        "message": "Chúc hai cháu trăm năm hạnh phúc, sớm có tin vui!",
+        "mediaType": "text",
+        "mediaUrl": null,
+        "timestamp": "2026-09-12T12:30:00Z"
+      },
+      {
+        "id": "msg_22",
+        "authorName": "Thảo & Nam",
+        "message": "The most beautiful banquet — and the best karaoke night ever. Congratulations!",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-09-13T02:00:00Z"
+      },
+      {
+        "id": "msg_23",
+        "authorName": "Hội bạn đại học",
+        "message": "Chúc mừng hạnh phúc! Nhớ giữ cuốn sách đó nhé 📚",
+        "mediaType": "image",
+        "mediaUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
+        "timestamp": "2026-09-14T08:45:00Z"
+      },
+      {
+        "id": "msg_24",
+        "authorName": "Anonymous",
+        "message": "This one is still waiting for approval.",
+        "mediaType": "text",
+        "mediaUrl": null,
+        "timestamp": "2026-09-20T08:45:00Z",
+        "status": "pending"
+      }
+    ],
+    "music": {
+      "title": "Em Đồng Ý (I Do)",
+      "artist": "Đức Phúc ft. 911 & Khắc Hưng",
+      "url": "https://youtu.be/Trjrj_fQnIM?list=RDTrjrj_fQnIM"
+    }
+  }
+}
