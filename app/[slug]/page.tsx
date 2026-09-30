@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { GuestbookProvider } from "@/components/guestbook/GuestbookProvider";
-import { GuestbookSection } from "@/components/guestbook/GuestbookSection";
+import { DigitalGuestbook } from "@/components/DigitalGuestbook";
 import { AudioPlayer } from "@/components/sections/AudioPlayer";
 import { EventsSection } from "@/components/sections/EventsSection";
 import { FilmSection } from "@/components/sections/FilmSection";
@@ -72,8 +71,8 @@ export default async function CouplePage({ params }: { params: Params }) {
   // Only approved wishes are public; pending ones stay server-side until moderated.
   const publicEntries = (couple.guestbookEntries ?? []).filter((entry) => entry.status !== "pending");
 
-  const page = (
-    <>
+  return (
+    <ThemeProvider initialTheme={couple.theme}>
       <Navigation brand={couple.hero.names} items={buildNavItems(couple)} />
       <main>
         <HeroSection hero={couple.hero} />
@@ -82,25 +81,20 @@ export default async function CouplePage({ params }: { params: Params }) {
         {couple.events.length > 0 && <EventsSection events={couple.events} coupleNames={couple.hero.names} />}
         {couple.travel && couple.travel.hotels.length > 0 && <TravelSection travel={couple.travel} />}
         {couple.gallery.length > 0 && <GallerySection images={couple.gallery} />}
-        {couple.guestbookConfig && <GuestbookSection timeZone={couple.hero.timeZone} />}
+        {couple.guestbookConfig && (
+          <DigitalGuestbook
+            slug={couple.slug}
+            config={couple.guestbookConfig}
+            entries={publicEntries}
+            timeZone={couple.hero.timeZone}
+          />
+        )}
         <RSVPForm slug={couple.slug} config={couple.rsvpConfig} isOpen={isRsvpOpen(couple.rsvpConfig.deadline)} />
         {couple.registry && <GiftSection registry={couple.registry} />}
       </main>
       <Footer hero={couple.hero} />
       {couple.music && <AudioPlayer track={couple.music} />}
       <ThemeSwitcher />
-    </>
-  );
-
-  return (
-    <ThemeProvider initialTheme={couple.theme}>
-      {couple.guestbookConfig ? (
-        <GuestbookProvider config={couple.guestbookConfig} initialEntries={publicEntries}>
-          {page}
-        </GuestbookProvider>
-      ) : (
-        page
-      )}
     </ThemeProvider>
   );
 }
